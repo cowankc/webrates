@@ -1,0 +1,27 @@
+{
+  "name": "web-rates",
+  "version": "1.0.0",
+  "description": "website forum",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cowankc/webrates.git"
+  },
+  "author": "kevin cowan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cowankc/webrates/issues"
+  },
+  "homepage": "https://webrates.herokuapp.com/"
+}
